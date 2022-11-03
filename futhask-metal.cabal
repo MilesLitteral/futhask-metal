@@ -1,0 +1,87 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           futhask-metal
+version:        0.2.0
+synopsis:       Generate Haskell wrappers for Futhark libraries
+description:    Please see the README on GitLab at <https://gitlab.com/Gusten_Isfeldt/futhask#futhask>
+category:       FFI Tools
+author:         Gusten Isfeldt & Miles J. Litteral
+maintainer:     isfeldt@kth.se
+copyright:      2020 Gusten Isfeldt
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://gitlab.com/Gusten_Isfeldt/futhask.git
+
+library
+  exposed-modules:
+      CodeBodies
+      Convert
+      Debug
+      Declarations
+      Encode
+      Generate
+      Headers
+      Manifest
+      Name
+      RawBodies
+      Type
+  other-modules:
+      Paths_futhask_metal
+  hs-source-dirs:
+      src
+  build-depends:
+      aeson >=1.5.6.0
+    , attoparsec
+    , base >=4.7 && <5
+    , base-compat
+    , bytestring
+    , containers
+    , directory
+    , ghc >=9.0 && <9.3
+    , ghc-paths
+    , ghc-source-gen >=0.4.2.0
+    , hashable >=1.3.5.0
+    , random >=1.2.1
+    , raw-strings-qq
+    , split
+    , text
+    , unordered-containers
+  default-language: Haskell2010
+
+executable futhask
+  main-is: Main.hs
+  other-modules:
+      Paths_futhask_metal
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      aeson >=1.5.6.0
+    , attoparsec
+    , base >=4.7 && <5
+    , base-compat
+    , bytestring
+    , containers
+    , directory
+    , futhask-metal
+    , ghc >=9.0 && <9.3
+    , ghc-paths
+    , ghc-source-gen >=0.4.2.0
+    , hashable >=1.3.5.0
+    , random >=1.2.1
+    , raw-strings-qq
+    , split
+    , text
+    , unordered-containers
+  default-language: Haskell2010
