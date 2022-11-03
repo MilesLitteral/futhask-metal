@@ -28,6 +28,10 @@ If using `stack` add `c-sources: [Futhark.c]` to the `library` section of `packa
     extra-lib-dirs: /opt/cuda/lib
     extra-libraries: cuda cudart nvrtc
 
+#### Metal 
+    Metal requires .cc for it's entries file, it doesn't seem to need a extra libraries entry in stack.yaml but 
+    you will need to be on a machine where [Foundation]("https://developer.apple.com/documentation/foundation") is available
+
 ### Dependencies
 `transformers` and `massiv` are required for all backends.
 The codes generated for OpenCL and CUDA, both refer to types from the `OpenCL` and `cuda` packages respectively. This is only relevant if one wants to use certain functions in the raw interface, but, without modification, the generated code will not compile without these dependencies.
