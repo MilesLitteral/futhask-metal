@@ -29,8 +29,8 @@ If using `stack` add `c-sources: [Futhark.c]` to the `library` section of `packa
     extra-libraries: cuda cudart nvrtc
 
 #### Metal 
-    Metal requires .cc for it's entries file, it doesn't seem to need a extra libraries entry in stack.yaml but 
-    you will need to be on a machine where [Foundation]("https://developer.apple.com/documentation/foundation") is available
+Metal requires .cc for it's entries file, it doesn't seem to need a extra libraries entry in stack.yaml but 
+you will need to be on a machine where [Foundation](https://developer.apple.com/documentation/foundation) is available
 
 ### Dependencies
 `transformers` and `massiv` are required for all backends.
